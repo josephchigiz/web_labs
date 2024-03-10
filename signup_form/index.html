@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>WeLearn!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="WeLearn">
+        <h1>WeLearn!</h1>
+      </div>
+    </header>
+    <section id="hero-section">
+      <div class="main-div">
+        <div id="displayData"></div>
+        <form name="form1" id="form1" onsubmit="return formValidate()">
+          <h2>Sign Up</h2>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            id="name"
+            class="myname"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            class="myemail"
+            required
+          />
+          <input
+            type="tel"
+            id="tel"
+            title="Number must be 10 digits."
+            name="number"
+            placeholder="Phone No."
+            class="mynumber"
+            required
+            minlength="10"
+            maxlength="10"
+          />
+
+          <!-- <label for="Courses">Choose Course</label> -->
+          <select name="Courses" id="courses" required>
+            <option value="" disabled selected hidden>Choose Course</option>
+            <option value="Front-End Dev">Front-End Dev</option>
+            <option value="Back-End Dev">Back-End Dev</option>
+            <option value="Full-Stack Dev">Full-Stack Dev</option>
+            <option value="Cloud Engg">Cloud Engg</option>
+            <option value="Web Design">Web Design</option>
+          </select>
+          <input type="submit" name="submit" value="SUBMIT" class="submit" />
+          <!-- <button type="submit" class="submit">SUBMIT</button> -->
+        </form>
+      </div>
+    </section>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

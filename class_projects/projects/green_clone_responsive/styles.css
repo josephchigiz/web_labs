@@ -1,0 +1,72 @@
+:root {
+  --color-green: #00be69;
+}
+
+* {
+  /* font-family:; */
+}
+
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+i {
+  font-size: 30px;
+}
+
+header {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--color-green);
+  padding: 20px 10px;
+  margin-bottom: 0;
+}
+
+header > h1 {
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: white;
+}
+
+header>p {
+  color: white;
+  letter-spacing: 0.2px;
+}
+
+#form-sect {
+  margin-top: 0;
+  background-color: var(--color-green);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%
+}
+
+#form-sect>div{
+  width: 80%;
+}
+
+.try-div {
+  background-color: grey;
+}
+
+.try-div p {
+  margin: 0 auto;
+}
+form {
+  background-color: white;
+}

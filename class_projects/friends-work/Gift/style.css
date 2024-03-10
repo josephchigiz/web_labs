@@ -1,0 +1,261 @@
+body {
+  margin: 0;
+  /* padding-bottom: 200px; */
+  font-family: "Aleo", serif;
+  font-optical-sizing: auto;
+  height: 100vh;
+}
+
+nav {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  /* vertical-align: middle; */
+  padding: 10px;
+  /* background-color: #f2f2f2; */
+}
+
+nav img {
+  height: 50px;
+  border: 5px solid white;
+}
+
+nav ul {
+  list-style: none;
+  /* display: flex; */
+  display: inline-block;
+  float: right;
+}
+
+nav li {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.profile {
+  text-align: center;
+  background-color: #f2f2f2;
+  height: 200px;
+  margin-bottom: 50px;
+}
+
+.profile img {
+  border-radius: 50%;
+  margin-top: 50px;
+  width: 200px;
+  height: 200px;
+}
+
+.content {
+  text-align: center;
+  margin-top: 0px;
+}
+
+.content h4 {
+  margin-bottom: 0px;
+}
+
+.part1 {
+  font-size: 40px;
+  font-weight: 200;
+  /* margin-bottom: 20px; */
+}
+
+.bold-word {
+  font-weight: bold;
+}
+
+
+.hero-a {
+  /* border: 1px solid black; */
+  padding: 20px;
+}
+
+.content p {
+  width: 50%;
+  /* margin: 0 auto; */
+  margin: 20px auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.container {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  width: 100%;
+  height: 500px;
+}
+
+.child {
+  width: 80%;
+  /* background-color: red; */
+  height: 100%;
+  margin: 10%;
+}
+
+.image-container {
+  /* flex-basis: 48%; */
+  /* width: 100%; */
+  width: 50%;
+  padding: 10px;
+  /* text-align: right; */
+  box-sizing: border-box;
+  float: left;
+  height: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 100;
+  /* height: 50%; */
+}
+
+.write-up {
+  text-align: right;
+  text-transform: capitalize;
+  /* font-weight: lighter; */
+  /* padding-right: 20px; */
+  padding-bottom: 20px;
+  /* margin-top: 50px; */
+  width: 100%;
+  margin-top: 0;
+  /* margin-bottom: 50px; */
+  /* margin-right: 50%; */
+}
+
+.caption {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 50px;
+  text-decoration: none;
+  color: white;
+  margin-left: 10px;
+  background-color: black;
+  padding-top: 5px;
+}
+
+.additional-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.additional-section-left {
+  flex-basis: 48%;
+  text-align: right;
+  margin-left: 10px;
+  font-size: 50px;
+}
+
+.additional-section-right {
+  flex-basis: 48%;
+  text-align: left;
+  margin-right: 40px;
+}
+
+.additional-section-right .read-more {
+  margin-top: 0;
+}
+
+.additional-section-right p {
+  margin-bottom: 0;
+}
+
+.section-divider {
+  border: none;
+  border-top: 3px solid black;
+  margin-top: 20px;
+  text-align: center;
+  width: 50%;
+}
+
+.another-sec {
+  text-align: center;
+  margin-top: 100%;
+}
+
+.arrow {
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+}
+
+.arrow::after {
+  content: "▼";
+  position: absolute;
+  top: -12px;
+  left: 0;
+}
+
+.arrow + .arrow {
+  margin-left: 10px;
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.portfolio-img {
+  flex: 0 0 23%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.portfolio-img img {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-img img:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-img .topleft,
+.portfolio-img .bottomleft {
+  position: absolute;
+  color: white;
+}
+
+.portfolio-img .topleft {
+  top: 8px;
+  left: 16px;
+}
+
+.portfolio-img .bottomleft {
+  bottom: 8px;
+  left: 16px;
+}
+
+.esther {
+  text-align: center;
+}
+
+.alt {
+  left: 50%;
+  margin: 100px 90px 400px 600px;
+  border-width: 30px;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: large;
+  box-shadow: 1.2;
+  border: 2px solid black;
+}

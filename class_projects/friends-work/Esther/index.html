@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 24px;
+      }
+      body {
+        font-family: "Aleo", serif;
+        font-optical-sizing: auto;
+      }
+      nav {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: inline;
+        height: 100%;
+      }
+
+      nav ul li {
+        float: right;
+        margin-right: 10px;
+        height: 100%;
+        line-height: 50px;
+      }
+
+      section {
+        margin-top: 10px;
+        margin-bottom: 130px !important; /* TODO: Added margin-bottom to 130px to prevent overlapping */
+        clear: both;
+        width: 100%;
+      }
+
+      .clear::after {
+      content: ""; 
+      display: table;
+      clear: both;
+      width: 100%;
+      }
+
+      section img {
+        width: 100%;
+      }
+
+      .header {
+        width: 100%;
+        margin: auto;
+        background-color: #f2f2f2;
+        text-align: center;
+        height: 100%;
+        padding-top: 7%;
+        margin-bottom: 7%;
+      }
+
+      .header img {
+        width: 25%;
+        margin: auto;
+        border-radius: 50%;
+
+        margin-bottom: -7%;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .uppercase {
+        text-transform: uppercase;
+      }
+
+      .mb-none {
+        margin-bottom: 0;
+      }
+
+      .container {
+        width: 80%;
+        margin-left: 10%;
+      }
+
+      h4 {
+        font-size: 2.5rem;
+        font-weight: 300;
+      }
+
+      h4 span {
+        font-weight: 700;
+      }
+
+      a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+      }
+
+      a.transparent {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        padding: 15px 25px;
+        border: 1px solid black;
+      }
+      a.fill {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        padding: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        border: 1px solid black;
+        background-color: black;
+        margin: 4px 2px;
+        
+      }
+     a.fill :hover{
+      background-color: blue;
+     }
+      .shadow {
+        box-shadow: 5px 10px 8px #9d9d9d;
+      }
+
+      .bg-div {
+        background-color: #f2f2f2;
+        height: 300px;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        /* TODO: fix hack for bg div */
+        margin-bottom: -70%;
+      }
+
+      hr {
+        border: 3px solid black;
+      }
+
+      .work-grid {
+        clear: both;
+      }
+
+      .work-grid .card {
+        width: 33.3333%;
+        padding: 1%;
+        box-sizing: border-box;
+        position: relative;
+        float: left;
+      }
+
+      .work-grid .card .top-text,
+      .work-grid .card .text-bottom {
+        position: absolute;
+        z-index: 1;
+      }
+      .work-grid .card .top-text {
+        top: 15%;
+        left: 10%;
+        color: white;
+      }
+      .work-grid .card .text-bottom {
+        top: 65%;
+        left: 10%;
+        background-color: white;
+        color: black;
+        padding: 2.5%;
+        border-radius: 5px;
+      }
+
+      .website-card {
+        position: relative;
+        margin-bottom: 25px;
+        clear: both;
+        height: 28vh;
+      }
+
+      .website-card .content-section {
+        width: 49%;
+        margin-left: 1%;
+        float: left;
+        padding-right: 2%;
+        box-sizing: border-box;
+      }
+
+      .website-card .content-section h4 {
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+      .website-card .content-section h4 span {
+        font-weight: 300;
+      }
+      .website-card .content-section a {
+        text-decoration: underline;
+      }
+
+      .website-card .img-section {
+        width: 49%;
+        margin-right: 1%;
+        float: left;
+      }
+
+      .cards-section {
+        clear: both;
+        margin-top: 50px;
+        position: relative;
+        margin-left: 10%;
+        width: 80%;
+
+        margin-bottom: 100px;
+      }
+
+      .cards-section .card {
+        width: 23%;
+        float: left;
+        /* margin-right: 10px; */
+        box-shadow: 1px 3px 12px #9d9d9d;
+        padding: 25px;
+        margin: 1%;
+
+        box-sizing: border-box;
+        text-align: center;
+        position: relative;
+      }
+
+      .cards-section .card div {
+        border-radius: 50%;
+        background-color: blue;
+        width: 125px;
+        margin: auto;
+        /* height: 100px; */
+        padding: 25px 0;
+      }
+
+      .cards-section .card h5 {
+        font-size: 30px;
+      }
+
+      .cards-section .card i.fa {
+        font-size: 75px;
+        margin: auto;
+        color: white;
+      }
+
+      .form-section {
+        /* clear: both; */
+
+        /* margin-bottom: ; */
+      }
+
+      .form-section form {
+        width: 100%;
+        padding: 5%;
+
+        background-color: #f2f2f2;
+      }
+
+      .form-section form input,
+      .form-section form textarea {
+        display: block;
+        width: 100%;
+        font-size: 25px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+      .form-section form button {
+        padding: 25px 50px;
+        border-radius: 40px;
+        color: white;
+        background-color: blue;
+        font-size: 25px;
+        border: 0;
+      }
+
+      footer {
+        margin-bottom: 100px !important;
+        clear: both;
+        width: 100%;
+        background-image: url("https://picsum.photos/1000/400");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        /* opacity: 0.3; */
+        height: 400px;
+      }
+
+      footer p {
+        text-align: center;
+        padding-top: 15%;
+        color: white;
+        opacity: 1;
+      }
+
+      footer .icons {
+        text-align: center;
+
+        color: white;
+      }
+
+      footer .icons .fa {
+        color: white;
+        font-size: 50px;
+        padding: 0 10px;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <img src="https://picsum.photos/100/50" alt="" />
+      <ul>
+        <li>Contact</li>
+        <li>Home</li>
+        <li>Portfolio</li>
+        <li>About</li>
+      </ul>
+    </nav>
+
+    <section class="header">
+      <img src="https://picsum.photos/500" alt="" />
+    </section>
+
+    <section class="text-section text-center container">
+      <h4 class="uppercase mb-none">
+        Creative <br />
+        <span>Work</span>
+      </h4>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
+        animi natus. Iure, eius esse asperiores non rem obcaecati explicabo
+        minima, laboriosam maxime amet odit, voluptatem vero soluta. Rem, enim
+        est.
+      </p>
+      <a href=""> read more</a>
+    </section>
+
+    <section class="clear">
+      <div class="container" style="display: block">
+        <div style="width: 48%; margin-right: 1%; float: left">
+          <h4 style="margin-top: 0">I Am <span>Designer</span></h4>
+          <img class="shadow" src="https://picsum.photos/500/1000" alt="" />
+        </div>
+
+        <div style="width: 48%; margin-left: 1%; float: left">
+          <img
+            src="https://picsum.photos/500/1000"
+            alt=""
+            style="margin-bottom: 20px"
+            class="shadow"
+          />
+          <a href="" class="transparent shadow"> read more</a>
+        </div>
+      </div>
+      <div class="blank"
+      style="
+      clear: both;
+      width: 100%;
+      background-color: rgb(66, 0, 0);
+      height: 300px;
+      /* margin: 0; */
+      margin-top: -700px;
+      ">
+      </div>
+    
+    </section>
+
+    <section style="padding-top: 50px" class="text-center">
+      <div>
+        <div style="width: 50%; margin-right: 1%; float: left; height: 60vh">
+          <!-- <h4 style="font-size: 125px; text-align: end"> -->
+            <h4 style="font-size: 80px;
+            text-align: right;
+            margin: 10% 0;
+            margin-right: 20px">
+            
+            We <br />
+            Build <br> 
+            <span>Digital</span>
+          </h4>
+        </div>
+
+        <div
+          style="
+            width: 48%;
+            margin-right: 1%;
+            float: left;
+            position: relative;
+            height: 60vh;
+          "
+        >
+          <div
+            style="
+              text-align: start;
+              padding-left: 5%;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+            "
+          >
+            <p style="margin-bottom: 30px">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum
+              repellat voluptas suscipit nisi sed culpa repudiandae aliquam fuga
+              distinctio architecto? Nihil velit voluptate hic, animi
+              exercitationem accusamus voluptatum! Aliquid, minus!
+            </p>
+            <a href="" class="fill shadow"> read more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-center container">
+      <hr />
+
+      <div
+        class="text-only-section"
+        style="
+          margin: 80px 0;
+          font-size: 50px;
+          font-family: Arial, Helvetica, sans-serif;
+        "
+      >
+        We Design People Inspired <br />
+        Experiences That Create Positive <br />
+        Change in People's Lives.
+      </div>
+
+      <i
+        class="fa fa-angle-double-down fa-5"
+        style="font-size: 150px; font-weight: 100"
+        aria-hidden="true"
+      ></i>
+
+      <h4>View Portfolio</h4>
+    </section>
+
+    <section>
+      <div class="work-grid">
+        <div class="card">
+          <img src="https://picsum.photos/400/250" alt="" srcset="" />
+          <div class="top-text">By Oyenuga Esther</div>
+
+          <div class="text-bottom">Work 1</div>
+        </div>
+
+        <div class="card">
+          <img src="https://picsum.photos/400/250" alt="" srcset="" />
+          <div class="top-text">By Oyenuga Esther</div>
+
+          <div class="text-bottom">Work 2</div>
+        </div>
+
+        <div class="card">
+          <img src="https://picsum.photos/400/250" alt="" srcset="" />
+          <div class="top-text">By Oyenuga Esther</div>
+
+          <div class="text-bottom">Work 3</div>
+        </div>
+
+        <div class="card">
+          <img src="https://picsum.photos/400/250" alt="" srcset="" />
+          <div class="top-text">By Oyenuga Esther</div>
+
+          <div class="text-bottom">Work 4</div>
+        </div>
+
+        <div class="card">
+          <img src="https://picsum.photos/400/250" alt="" srcset="" />
+          <div class="top-text">By Oyenuga Esther</div>
+
+          <div class="text-bottom">Work 5</div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/400/250" alt="" srcset="" />
+          <div class="top-text">By Oyenuga Esther</div>
+
+          <div class="text-bottom">Work 6</div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/400/250" alt="" srcset="" />
+          <div class="top-text">By Oyenuga Esther</div>
+
+          <div class="text-bottom">Work 7</div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/400/250" alt="" srcset="" />
+          <div class="top-text">By Oyenuga Esther</div>
+
+          <div class="text-bottom">Work 8</div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/400/250" alt="" srcset="" />
+          <div class="top-text">By Oyenuga Esther</div>
+
+          <div class="text-bottom">Work 9</div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/400/250" alt="" srcset="" />
+          <div class="top-text">By Oyenuga Esther</div>
+
+          <div class="text-bottom">Work 10</div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/400/250" alt="" srcset="" />
+          <div class="top-text">By Oyenuga Esther</div>
+
+          <div class="text-bottom">Work 11</div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/400/250" alt="" srcset="" />
+          <div class="top-text">By Oyenuga Esther</div>
+
+          <div class="text-bottom">Work 12</div>
+        </div>
+      </div>
+      <div class="text-center" style="clear: both; margin-bottom: 10px; margin-top: 10px"> <!--TODO: Changed margin-bottom-->
+        <a class="fill" href=""> view more</a>
+      </div>
+    </section>
+
+    <section >  <!--style="height: 92vh"--> <!--TODO: Removed Section Height-->
+      <div class="website-card">
+        <div class="content-section">
+          <h4 style="">Music Band <span>Website</span></h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam iusto
+            eveniet tenetur minus alias placeat modi beatae explicabo iure
+            aspernatur et, facere sunt, nam molestias vel possimus reprehenderit
+            dolor quis!
+          </p>
+          <a href=""> view project</a>
+        </div>
+        <div class="img-section">
+          <img src="https://picsum.photos/400/200" alt="" srcset="" />
+        </div>
+      </div>
+      <div class="website-card">
+        <div class="content-section">
+          <h4 style="">Coffee Cup <span>Website</span></h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam iusto
+            eveniet tenetur minus alias placeat modi beatae explicabo iure
+            aspernatur et, facere sunt, nam molestias vel possimus reprehenderit
+            dolor quis!
+          </p>
+          <a href=""> view project</a>
+        </div>
+        <div class="img-section">
+          <img src="https://picsum.photos/400/200" alt="" srcset="" />
+        </div>
+      </div>
+      <div class="website-card">
+        <div class="content-section">
+          <h4 style="">Food Diary <span>Website</span></h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam iusto
+            eveniet tenetur minus alias placeat modi beatae explicabo iure
+            aspernatur et, facere sunt, nam molestias vel possimus reprehenderit
+            dolor quis!
+          </p>
+          <a href=""> view project</a>
+        </div>
+        <div class="img-section">
+          <img src="https://picsum.photos/400/200" alt="" srcset="" />
+        </div>
+      </div>
+      <br />
+      <div class="text-center" style="margin: 200px;"> <!--TODO: Added Margin of 200px to add margin top-->
+        <a href="" class="fill shadow"> see all projects </a>
+      </div>
+    </section>
+
+    <section style="height: 50vh">
+      <div class="text-center">
+        <h4 style="font-weight: 700; margin-bottom: 25px">Contact Me</h4>
+        <div class="small-text" style="letter-spacing: 8px">
+          Let's start a conversation
+        </div>
+      </div>
+
+      <div class="cards-section">
+        <div class="card">
+          <div style="">
+            <i
+              class="fa fa-map-marker fa-5"
+              style="font-weight: 100"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <h5>Address</h5>
+          <p>Street No ...</p>
+        </div>
+        <div class="card">
+          <div style="">
+            <i
+              class="fa fa-phone fa-5"
+              style="font-weight: 100"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <h5>Contact Number</h5>
+          <p>+91xxx xxxxxxxx</p>
+        </div>
+        <div class="card">
+          <div style="">
+            <i
+              class="fa fa-paper-plane fa-5"
+              style="font-weight: 100"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <h5>Email Address</h5>
+          <p>estheroye@gmail.com</p>
+        </div>
+        <div class="card">
+          <div style="">
+            <i
+              class="fa fa-globe fa-5"
+              style="font-weight: 100"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <h5>Website</h5>
+          <p>oyenuga.com</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div style="float: left; width: 50%; height: 500px; overflow: hidden">
+        <img
+          style="width: 100%"
+          src="https://picsum.photos/400/400"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div
+        class="form-section"
+        style="float: left; width: 50%; height: 500px; overflow: hidden"
+      >
+        <form action="">
+          <input type="text" placeholder="Your Name" />
+          <input type="text" placeholder="Your Email" />
+          <input type="text" placeholder="Subject" />
+          <textarea placeholder="Message" rows="4"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>We want to stay in touch with you! Please follow us on social media so we can keep
+        <br> in touch.
+      </p>
+      <div class="icons">
+        <a href=""
+          ><i class="fa fa-facebook-official" aria-hidden="true"></i>
+        </a>
+        <a href=""><i class="fa fa-twitter" aria-hidden="true"></i> </a>
+        <a href=""><i class="fa fa-youtube" aria-hidden="true"></i> </a>
+      </div>
+    </footer>
+  </body>
+</html>

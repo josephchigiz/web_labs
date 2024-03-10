@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap");
+
+html {
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* background-image: url(../media/shelf.png); */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 86, 114, 1),
+    rgba(87, 91, 91, 0.46)
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0px;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.53);
+}
+
+.WeLearn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-family: "Irish Grover", system-ui;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+#hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .main-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  #displayData {
+    display: none;
+    background-color: rgba(217, 217, 217, 0.7);
+    border-radius: 6px;
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+
+    p {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(217, 217, 217, 0.7);
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    height: 70%;
+    width: 392px;
+
+    h2 {
+      color: white;
+      font-size: 28px;
+      margin: 10px;
+    }
+
+    .myname,
+    .myemail,
+    .mynumber {
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      height: 30px;
+      width: 80%;
+      padding: 10px;
+      transition: all 200ms ease-in-out;
+    }
+    input:hover {
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    select {
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      width: 80%;
+      padding: 15px;
+      color: #3e3e3e;
+      cursor: pointer;
+      transition: all 200ms ease-in-out;
+    }
+    select:hover {
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.submit {
+  border: none;
+  padding: 10px 5px;
+  border-radius: 10px;
+  width: 90px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.submit:hover {
+  transform: scale(1.1);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
